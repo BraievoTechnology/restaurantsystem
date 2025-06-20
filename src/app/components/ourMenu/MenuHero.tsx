@@ -1,10 +1,11 @@
+'use client'
 import React from 'react'
 const MenuHero = () => {
     return (
         <div className="relative w-full h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 z-0 bg-black">
                 <img
-                    src="/Images/ourMenu/ourMenuHero.png"
+                    src="https://uploadthingy.s3.us-west-1.amazonaws.com/1BquaZAiNvnQBbzyYiLjAJ/ChatGPT_Image_May_30%2C_2025%2C_09_19_02_PM_1.png"
                     alt="Elegant food spread"
                     className="w-full h-full object-cover opacity-75"
                 />
