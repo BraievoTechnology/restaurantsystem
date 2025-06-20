@@ -1,4 +1,6 @@
-import React from 'react'
+
+import React, { useState } from 'react'
+import {useCart} from "@/app/context/CartContext";
 interface MenuItemProps {
     name: string
     description: string
@@ -11,45 +13,58 @@ const MenuItem: React.FC<MenuItemProps> = ({
                                                price,
                                                image,
                                            }) => {
+    const { addItem } = useCart()
+    const [isAdding, setIsAdding] = useState(false)
+    const handleAddItem = () => {
+        setIsAdding(true)
+        addItem(name, price)
+        setTimeout(() => {
+            setIsAdding(false)
+        }, 1000)
+    }
     return (
-        <div
-            className="bg-[#112225] rounded-tl-[100px] rounded-br-[100px] w-full h-[390px] flex flex-col items-center justify-between pt-28 pb-20 px-6 text-center relative transition-all duration-300 ease-in-out hover:bg-[#1E2F33] hover:shadow-2xl hover:scale-[1.02]"
-            style={{
-                transformStyle: 'preserve-3d',
-                perspective: '1000px',
-            }}
-        >
-            {/* Circular top image */}
-            <div className="absolute -top-24 flex justify-center w-full">
+        <div className="w-full h-auto min-h-[400px] md:min-h-[450px] bg-[#112225] rounded-tl-[60px] md:rounded-tl-[100px] rounded-br-[60px] md:rounded-br-[100px] flex flex-col items-center justify-between p-4 md:p-6 text-center relative transition-all duration-300 ease-in-out hover:bg-[#1E2F33] hover:shadow-2xl hover:scale-[1.02]">
+            {/* Image Container */}
+            <div className="absolute -top-16 md:-top-20 left-1/2 transform -translate-x-1/2 w-[160px] md:w-[200px] aspect-square">
                 {image && (
                     <img
                         src={image}
                         alt={name}
-                        className="rounded-full w-[220px] h-[220px] object-cover"
+                        className="w-full h-full rounded-full object-cover"
                     />
                 )}
             </div>
-
-            {/* Title & Description */}
-            <div className="mt-[26px]">
-                <h3
-                    className="text-white text-[24px] mb-2"
-                    style={{
-                        fontFamily: 'serif',
-                    }}
-                >
-                    {name}
-                </h3>
-                <p className="text-gray-300 text-[14px] leading-relaxed px-2">
-                    {description}
-                </p>
-            </div>
-
-            {/* Price Button */}
-            <div className="mt-4">
-                <button className="bg-[#68573A] hover:bg-[#7A6544] text-white px-6 py-2 rounded-full transition-colors duration-300">
-                    {price}
-                </button>
+            {/* Content Container */}
+            <div className="flex flex-col h-full w-full pt-24 md:pt-28">
+                {/* Title & Description */}
+                <div className="flex-grow">
+                    <h3 className="text-white text-xl md:text-2xl mb-2 font-serif line-clamp-2">
+                        {name}
+                    </h3>
+                    <p className="text-gray-300 text-sm md:text-base leading-relaxed px-2 line-clamp-3">
+                        {description}
+                    </p>
+                </div>
+                {/* Price and Order Button */}
+                <div className="mt-4 flex flex-col gap-2">
+                    <div className="text-[#C8A97E] text-lg md:text-xl">{price}</div>
+                    <button
+                        onClick={handleAddItem}
+                        disabled={isAdding}
+                        className={`w-full bg-[#68573A] hover:bg-[#7A6544] text-white px-4 py-2 rounded-full transition-all duration-300 relative overflow-hidden ${isAdding ? 'pointer-events-none' : ''}`}
+                    >
+            <span
+                className={`inline-block transition-transform duration-300 ${isAdding ? '-translate-y-10' : 'translate-y-0'}`}
+            >
+              Order Now
+            </span>
+                        <span
+                            className={`absolute left-1/2 -translate-x-1/2 transition-transform duration-300 ${isAdding ? 'translate-y-0' : 'translate-y-10'}`}
+                        >
+              Added! ✓
+            </span>
+                    </button>
+                </div>
             </div>
         </div>
     )
