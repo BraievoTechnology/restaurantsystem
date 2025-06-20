@@ -160,15 +160,14 @@ const MenuSection: React.FC<MenuSectionProps> = ({ category }) => {
     }
     let items = []
     if (category === 'All Menu') {
-        // Combine all items from all categories
         items = Object.values(menuItems).flat()
     } else {
         items = menuItems[category as keyof typeof menuItems] || []
     }
     return (
-        <section className="w-full min-h-screen text-white pt-40 md:pt-40 px-4 md:px-8 relative overflow-hidden flex flex-col">
-            <div className="flex-1 flex justify-center items-center">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-40 md:gap-35 max-w-[1600px] mx-auto">
+        <section className="w-full min-h-screen text-white pt-32 md:pt-40 px-4 md:px-8 pb-20 relative overflow-hidden">
+            <div className="flex justify-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-24 md:gap-28 max-w-[1600px]">
                     {items.map((item, index) => (
                         <MenuItem
                             key={index}
