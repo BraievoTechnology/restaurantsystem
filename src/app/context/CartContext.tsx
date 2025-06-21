@@ -1,14 +1,19 @@
-
 import React, { useState, createContext, useContext } from 'react'
 interface CartItem {
     name: string
     price: string
     quantity: number
+    portion: string
 }
 interface CartContextType {
     items: CartItem[]
     isOpen: boolean
-    addItem: (name: string, price: string) => void
+    addItem: (
+        name: string,
+        price: string,
+        portion: string,
+        quantity: number,
+    ) => void
     removeItem: (name: string) => void
     toggleCart: () => void
     itemCount: number
@@ -19,15 +24,22 @@ export const CartProvider: React.FC<{
 }> = ({ children }) => {
     const [items, setItems] = useState<CartItem[]>([])
     const [isOpen, setIsOpen] = useState(false)
-    const addItem = (name: string, price: string) => {
+    const addItem = (
+        name: string,
+        price: string,
+        portion: string,
+        quantity: number = 1,
+    ) => {
         setItems((current) => {
-            const existing = current.find((item) => item.name === name)
+            const existing = current.find(
+                (item) => item.name === name && item.portion === portion,
+            )
             if (existing) {
                 return current.map((item) =>
-                    item.name === name
+                    item.name === name && item.portion === portion
                         ? {
                             ...item,
-                            quantity: item.quantity + 1,
+                            quantity: item.quantity + quantity,
                         }
                         : item,
                 )
@@ -37,7 +49,8 @@ export const CartProvider: React.FC<{
                 {
                     name,
                     price,
-                    quantity: 1,
+                    portion,
+                    quantity,
                 },
             ]
         })
