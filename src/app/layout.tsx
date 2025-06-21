@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layout/Header";
 import { Rasa, Poppins } from "next/font/google";
+import Footer from "./components/layout/Footer";
 
 const rasa = Rasa({
   subsets: ["latin"],
@@ -37,18 +38,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`
-          ${geistSans.variable}
-          ${geistMono.variable}
-          ${rasa.variable}
-          ${poppins.variable}
-          antialiased
-        `}
-      >
+    <html lang="en" className="h-full">
+      <body className="flex flex-col min-h-screen">
         <Header />
-        {children}
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

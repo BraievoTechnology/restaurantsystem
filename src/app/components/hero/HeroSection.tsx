@@ -17,15 +17,15 @@ const HeroSection: React.FC<HeroProps> = ({ dataId }) => {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black/30" />
-      <div className="relative z-10 text-center text-white px-4">
-        <p className="text-lg font-inter mb-2">MORE FLAVOR FOR LESS</p>
-        <h1 className="text-6xl md:text-7xl font-poppins mb-4">
+      <div className="absolute inset-0" />
+      <div className="relative z-10 px-4 text-center text-white">
+        <p className="text-[32px] font-inter ">MORE FLAVOR FOR LESS</p>
+        <h1 className="text-6xl md:text-[150px] tracking-[16px] font-poppins mb-[32px]">
           Taste The
           <br />
           Difference
         </h1>
-        <p className="font-rasa text-lg md:text-xl max-w-2xl mx-auto mb-8">
+        <p className="font-[rasa] text-[20px] md:text-20px max-w-2xl mx-auto mb-[32px] tracking-[2px]">
           When the going gets tough, the tough get grilling. Bringing heat to
           your meat. No one can compete with our meat
         </p>

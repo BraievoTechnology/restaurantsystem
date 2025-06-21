@@ -25,7 +25,7 @@ const Card: React.FC<CardProps> = ({
       style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
     >
       {/* Circular top image */}
-      <div className="absolute -top-25 flex justify-center w-full">
+      <div className="absolute flex justify-center w-full -top-25">
         <Image
           src={image}
           alt={title}

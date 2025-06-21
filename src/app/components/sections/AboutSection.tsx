@@ -11,23 +11,40 @@ const AboutSection: React.FC<AboutSectionProps> = ({ dataId }) => {
   return (
     <section
       data-id={dataId}
-      className="w-full min-h-screen text-white py-16 px-4 relative overflow-hidden"
+      className="relative w-full min-h-screen px-4 py-16 overflow-hidden text-white"
     >
       {/* Bottom leaf decoration */}
       <img
         src="/images/double leaves.png"
         alt=""
-        className="absolute bottom-0 left-0 w-40 h-auto transform rotate-180"
+        className="absolute bottom-0 h-auto transform right-55 w-50"
+      />
+
+      {/* Extra single leaf decorations */}
+      <img
+        src="/images/single leaves.png"
+        alt="Leaf decoration"
+        className="absolute h-auto top-85 left-34 w-14 rotate-12"
+      />
+      <img
+        src="/images/single leaves.png"
+        alt="Leaf decoration"
+        className="absolute h-auto -rotate-45 top-1/2 right-10 w-18"
+      />
+      <img
+        src="/images/single leaves.png"
+        alt="Leaf decoration"
+        className="absolute h-auto bottom-20 left-30 w-14 rotate-6"
       />
 
       <div className="max-w-6xl mt-[64px] mx-auto">
         {/* Title section */}
-        <div className="text-center mb-16">
+        <div className="mb-16 text-center">
           <SectionTitle title="Restar A Culinary Oasis For Those Who Seek The Extraordinary" />
         </div>
 
         {/* Main content section */}
-        <div className="flex flex-col md:flex-row gap-0 mt-10">
+        <div className="flex flex-col gap-0 mt-10 md:flex-row">
           {/* Left column - Images */}
           <div className="relative w-full md:w-[45%] h-[500px] md:h-[600px] order-1 md:order-none">
             <img
@@ -41,19 +58,19 @@ const AboutSection: React.FC<AboutSectionProps> = ({ dataId }) => {
               className="absolute top-[35%] left-[20%] w-[60%] rounded-lg shadow-md z-20"
             />
             <img
-              src="/about/double_leaves.png"
+              src="/images/single leaves.png"
               alt=""
-              className="w-24 h-auto absolute bottom-[-20px] right-[-20px]"
+              className="absolute w-40 h-auto transform top-5 right-35 "
             />
           </div>
 
           {/* Right column - Text */}
-          <div className="w-full md:w-[55%] md:h-[600px] space-y-6 relative  left-[13%]">
+          <div className="w-full md:w-[55%] md:h-[600px] space-y-6 relative left-[13%]">
             <div className="relative p-6 rounded-sm border-b-2 border-[#FFFFFF]/20">
               <img
-                src="/about/single_leaves.png"
+                src="/images/Single leaves.png"
                 alt=""
-                className="absolute -left-12 top-0 w-10 h-auto"
+                className="absolute w-20 h-auto rotate-45 -left-32 top-65"
               />
               <h3
                 className="text-[40px] font-rasa mb-4"
@@ -127,12 +144,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ dataId }) => {
               <img
                 src="/images/signature.png"
                 alt="Signature"
-                className="h-12 w-auto"
-              />
-              <img
-                src="/images/single leaves.png"
-                alt=""
-                className="absolute bottom-0 right-0 w-16 h-auto transform rotate-45"
+                className="w-auto h-12"
               />
             </div>
           </div>

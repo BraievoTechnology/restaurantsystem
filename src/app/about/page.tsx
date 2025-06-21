@@ -39,29 +39,29 @@ interface StepItemDisplayProps {
 }
 
 const StepItemDisplay: React.FC<StepItemDisplayProps> = ({ step }) => (
-  <div className="flex flex-col items-center text-center w-full md:w-auto max-w-xs md:max-w-none px-2 py-6 md:py-0">
+  <div className="flex flex-col items-center w-full max-w-xs px-2 py-6 text-center md:w-auto md:max-w-none md:py-0">
     <div className="w-32 h-32 md:w-36 lg:w-40 bgmd:h-36 lg:h-40 rounded-full border-[5px] border-[#CA9C5E] bg-[#0B1517] flex items-center justify-center mb-6 p-3 shadow-lg">
       <div className="w-16 h-16 md:w-20 md:h-20 text-[#CA9C5E]">
         {step.icon}
       </div>
     </div>
-    <h3 className="text-2xl md:text-3xl font-serif text-gray-100 mb-3">
+    <h3 className="mb-3 font-serif text-2xl text-gray-100 md:text-3xl">
       {step.title}
     </h3>
-    <p className="text-sm md:text-base text-gray-400 leading-relaxed">
+    <p className="text-sm leading-relaxed text-gray-400 md:text-base">
       {step.description}
     </p>
   </div>
 );
 
 const DashedLineConnector: React.FC = () => (
-  <div className="hidden md:flex items-center justify-center flex-shrink-0 mx-4 lg:mx-6 xl:mx-8 w-16 lg:w-20 xl:w-24">
+  <div className="items-center justify-center flex-shrink-0 hidden w-16 mx-4 md:flex lg:mx-6 xl:mx-8 lg:w-20 xl:w-24">
     <div className="w-[300px] border-t-4 border-dashed border-gray-600 opacity-65 -mt-30" />
   </div>
 );
 
 const ProcessSteps: React.FC = () => (
-  <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto">
+  <div className="flex flex-col items-center justify-center w-full max-w-6xl mx-auto md:flex-row">
     {stepsData.map((step, index) => (
       <React.Fragment key={step.title}>
         <StepItemDisplay step={step} />
@@ -86,7 +86,7 @@ const HeroSection: React.FC = () => {
           <img
             src="/Images/coverPage.png"
             alt="Background"
-            className="w-full h-full object-cover"
+            className="object-cover w-full h-full"
           />
           <div className="absolute inset-0 bg-black opacity-80" />
         </div>
@@ -100,11 +100,11 @@ const HeroSection: React.FC = () => {
 
       {/* About Section Left Image */}
       <section className="bg-[#0B1517] font-sans text-brand-light py-20 sm:py-28">
-        <div className="container mx-auto px-4">
+        <div className="container px-4 mx-auto">
           <SectionTitle title="A Taste Of Our Space" />
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+          <div className="grid items-center grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-12">
             <div className="text-center lg:text-left">
-              <p className="text-base md:text-lg leading-relaxed text-gray-300 mb-6">
+              <p className="mb-6 text-base leading-relaxed text-gray-300 md:text-lg">
                 Contrary to popular belief, Lorem Ipsum is not simply random
                 text. It has roots in a piece of classical Latin literature from
                 45 BC. Contrary to popular belief, Lorem Ipsum is not simply
@@ -120,7 +120,7 @@ const HeroSection: React.FC = () => {
                 random text. It has roots in a piece of classical Latin
                 literature from 45 BC.lassical Latin literature from 45 BC.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-gray-300">
+              <p className="text-base leading-relaxed text-gray-300 md:text-lg">
                 It was popularised in the 1960s with the release of Letraset
                 shLatin literature from 45 BC. Contrary to popular belief, Lorem
                 Ipsum is not simply random text. It has roots in a piece of
@@ -128,14 +128,14 @@ const HeroSection: React.FC = () => {
                 belief
               </p>
             </div>
-            <div className="flex justify-center lg:justify-end px-4 mt-8 lg:mt-0">
+            <div className="flex justify-center px-4 mt-8 lg:justify-end lg:mt-0">
               <div className="relative w-full max-w-lg sm:max-w-xl">
                 <div className="absolute top-6 -right-6 w-full h-full border-[4px] border-[#CA9C5E] rounded"></div>
-                <div className="relative z-10 p-2 bg-brand-blue rounded">
+                <div className="relative z-10 p-2 rounded bg-brand-blue">
                   <img
                     src="https://media.istockphoto.com/id/1428412216/photo/a-male-chef-pouring-sauce-on-meal.jpg?s=612x612&w=0&k=20&c=8U3mrgWsuB7pB8axtGj89MXRkHDKodEli9F6wKgPT4A="
                     alt="Restaurant background"
-                    className="w-full h-auto object-cover rounded"
+                    className="object-cover w-full h-auto rounded"
                   />
                 </div>
               </div>
@@ -146,9 +146,9 @@ const HeroSection: React.FC = () => {
 
       {/* About Section Right Image */}
       <section className="bg-[#0B1517] font-sans text-brand-light py-20 sm:py-28">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
-            <div className="flex justify-center lg:justify-start px-4 mt-8 lg:mt-0">
+        <div className="container px-4 mx-auto">
+          <div className="grid items-center grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-12">
+            <div className="flex justify-center px-4 mt-8 lg:justify-start lg:mt-0">
               <div className="relative w-full max-w-[600px] sm:max-w-[800px]">
                 <div className="relative z-10 p-2 bg-brand-blue">
                   <img
@@ -160,7 +160,7 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
             <div className="text-center lg:text-right">
-              <p className="text-base md:text-lg leading-relaxed text-gray-300 mb-6">
+              <p className="mb-6 text-base leading-relaxed text-gray-300 md:text-lg">
                 Contrary to popular belief, Lorem Ipsum is not simply random
                 text. It has roots in a piece of classical Latin literature from
                 45 BC. Contrary to popular belief, Lorem Ipsum is not simply
@@ -176,7 +176,7 @@ const HeroSection: React.FC = () => {
                 random text. It has roots in a piece of classical Latin
                 literature from 45 BC.lassical Latin literature from 45 BC.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-gray-300">
+              <p className="text-base leading-relaxed text-gray-300 md:text-lg">
                 It was popularised in the 1960s with the release of Letraset
                 shLatin literature from 45 BC. Contrary to popular belief, Lorem
                 Ipsum is not simply random text. It has roots in a piece of
@@ -190,7 +190,7 @@ const HeroSection: React.FC = () => {
 
       {/* Our Process Steps */}
       <section className="bg-[#0B1517] py-20 sm:py-28">
-        <div className="container mx-auto px-4">
+        <div className="container px-4 mx-auto">
           <SectionTitle title="Our Process" />
           <div className="flex justify-center mt-10">
             <ProcessSteps />
@@ -200,7 +200,7 @@ const HeroSection: React.FC = () => {
 
       {/* Chef Card Section */}
       <section className="bg-[#0B1517] font-sans text-brand-light py-20 sm:py-28">
-        <div className="container mx-auto px-4">
+        <div className="container px-4 mx-auto">
           {/* Side Image */}
           <div className="hidden lg:block absolute -mt-[220px] -left-70 z-20 pointer-events-none">
             <img
@@ -257,9 +257,9 @@ const HeroSection: React.FC = () => {
         {/* CTA Box */}
         <div className="relative z-20 w-[90vw] mx-auto text-center bg-[#0B1517] border-[4px] sm:border-[8px] md:border-[10px] border-[#B08D57] p-10 sm:p-16 md:p-20 lg:p-24 shadow-2xl">
           {/* Decorative Leaves */}
-          {/* <div className="hidden lg:block absolute -top-45 -right-20 z-10 pointer-events-none"> */}
+          {/* <div className="absolute z-10 hidden pointer-events-none lg:block -top-45 -right-20"> */}
 
-          <div className="hidden lg:block absolute -top-30 -right-20 z-10 pointer-events-none">
+          <div className="absolute z-10 hidden pointer-events-none lg:block -top-30 -right-20">
             <Image
               src="/Images/pngtree4.png"
               alt="Decorative leaves"
@@ -274,7 +274,7 @@ const HeroSection: React.FC = () => {
           </h2>
 
           <div
-            className="hidden lg:block absolute top-25 -left-20 z-10 pointer-events-none"
+            className="absolute z-10 hidden pointer-events-none lg:block top-25 -left-20"
             // style={{
             //   transform: 'rotate(135deg) translateX(-50px) translateY(20px)',
             // }}
@@ -294,10 +294,6 @@ const HeroSection: React.FC = () => {
             ariaLabel="Contact Us"
           />
         </div>
-      </section>
-
-      <section>
-        <Footer />
       </section>
     </>
   );
