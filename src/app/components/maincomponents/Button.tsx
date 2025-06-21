@@ -12,7 +12,7 @@ const MainButton: React.FC<MainButtonProps> = ({
   ariaLabel,
 }) => {
   return (
-    <div className="inline-flex flex-col items-center group relative">
+    <div className="relative inline-flex flex-col items-center group">
       {/* Top Divider Line */}
       <div className="w-30 sm:w-35 md:w-42 h-px bg-[#B08D57] mb-2 transform transition-all duration-300 group-hover:translate-y-1" />
 
