@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 import { X as XIcon, ShoppingCart as CartIcon } from "lucide-react";
@@ -91,9 +92,11 @@ const Cart = () => {
                   ${total.toFixed(2)}
                 </span>
               </div>
-              <button className="w-full bg-[#68573A] hover:bg-[#7A6544] py-3 rounded-lg transition-colors text-sm md:text-base font-medium">
-                Checkout
-              </button>
+              <Link href="/payment">
+                <button className="w-full bg-[#68573A] hover:bg-[#7A6544] py-3 rounded-lg transition-colors text-sm md:text-base font-medium">
+                  Checkout
+                </button>
+              </Link>
             </div>
           )}
         </div>
