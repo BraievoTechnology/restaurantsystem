@@ -1,6 +1,5 @@
-"use client";
 import React from "react";
-import Link from "next/link";
+
 import { X as XIcon, ShoppingCart as CartIcon } from "lucide-react";
 import { useCart } from "@/app/context/CartContext";
 const Cart = () => {
@@ -15,12 +14,14 @@ const Cart = () => {
       {itemCount > 0 && (
         <button
           onClick={toggleCart}
-          className={`fixed right-0 bottom-0 z-50 bg-[#68573A] hover:bg-[#7A6544] text-white p-4 rounded-tl-lg rounded-bl-lg shadow-lg transition-all duration-300 flex items-center gap-2 ${
-            isOpen ? "translate-x-[400px]" : "translate-x-0"
+          className={`fixed right-0 bottom-20 md:bottom-32 z-50 bg-[#68573A] hover:bg-[#7A6544] text-white p-3 md:p-4 shadow-lg transition-all duration-300 flex items-center gap-2 rounded-l-full ${
+            isOpen
+              ? "translate-x-[100vw] md:translate-x-[400px]"
+              : "translate-x-0"
           }`}
         >
-          <CartIcon size={24} />
-          <span className="absolute -top-2 -right-2 bg-[#C8A97E] text-white text-sm w-6 h-6 rounded-full flex items-center justify-center">
+          <CartIcon size={20} className="md:w-6 md:h-6" />
+          <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-[#C8A97E] text-white text-xs w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center">
             {itemCount}
           </span>
         </button>
@@ -34,57 +35,68 @@ const Cart = () => {
       )}
       {/* Cart Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-[400px] bg-[#112225] text-white p-6 transform transition-transform duration-300 ease-in-out z-50 ${
+        className={`fixed top-0 right-0 h-full w-full md:w-[400px] bg-[#112225] text-white transform transition-transform duration-300 ease-in-out z-50 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="font-serif text-2xl">Your Order</h2>
-          <button
-            onClick={toggleCart}
-            className="p-2 hover:bg-[#1E2F33] rounded-full transition-colors"
-          >
-            <XIcon size={24} />
-          </button>
-        </div>
-        {items.length === 0 ? (
-          <p className="text-gray-400">Your cart is empty</p>
-        ) : (
-          <>
-            <div className="flex-1 overflow-y-auto">
-              {items.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-center py-4 border-b border-[#68573A] gap-4"
-                >
-                  <div className="flex-1">
-                    <h3 className="font-serif">{item.name}</h3>
-                    <p className="text-sm text-gray-400">
-                      {item.price} x {item.quantity}
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => removeItem(item.name)}
-                    className="text-[#C8A97E] hover:text-[#68573A] transition-colors"
-                  >
-                    Remove
-                  </button>
-                </div>
-              ))}
-            </div>
-            <div className="mt-6 pt-6 border-t border-[#68573A]">
-              <div className="flex items-center justify-between mb-6">
-                <span className="font-serif text-xl">Total</span>
-                <span className="font-serif text-xl">${total.toFixed(2)}</span>
+        <div className="flex flex-col h-full">
+          {/* Header */}
+          <div className="flex justify-between items-center p-4 md:p-6 border-b border-[#68573A]">
+            <h2 className="font-serif text-xl md:text-2xl">Your Order</h2>
+            <button
+              onClick={toggleCart}
+              className="p-2 hover:bg-[#1E2F33] rounded-full transition-colors"
+            >
+              <XIcon size={20} className="md:w-6 md:h-6" />
+            </button>
+          </div>
+          {/* Content */}
+          <div className="flex-1 p-4 overflow-y-auto md:p-6">
+            {items.length === 0 ? (
+              <div className="flex items-center justify-center h-full">
+                <p className="text-center text-gray-400">Your cart is empty</p>
               </div>
-              <Link href="/payment">
-                <button className="w-full bg-[#68573A] hover:bg-[#7A6544] py-3 rounded-full transition-colors">
-                  Checkout
-                </button>
-              </Link>
+            ) : (
+              <div className="space-y-4">
+                {items.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center py-3 border-b border-[#68573A] gap-3 md:gap-4"
+                  >
+                    <div className="flex-1">
+                      <h3 className="font-serif text-sm md:text-base">
+                        {item.name}
+                      </h3>
+                      <p className="text-xs text-gray-400 md:text-sm">
+                        {item.portion} • {item.price} x {item.quantity}
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => removeItem(item.name)}
+                      className="text-[#C8A97E] hover:text-[#68573A] transition-colors text-sm"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          {/* Footer */}
+          {items.length > 0 && (
+            <div className="p-4 md:p-6 border-t border-[#68573A]">
+              <div className="flex items-center justify-between mb-4">
+                <span className="font-serif text-lg md:text-xl">Total</span>
+                <span className="font-serif text-lg md:text-xl">
+                  ${total.toFixed(2)}
+                </span>
+              </div>
+              <button className="w-full bg-[#68573A] hover:bg-[#7A6544] py-3 rounded-lg transition-colors text-sm md:text-base font-medium">
+                Checkout
+              </button>
             </div>
-          </>
-        )}
+          )}
+        </div>
       </div>
     </>
   );
