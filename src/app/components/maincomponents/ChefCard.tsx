@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import React from "react";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const ChefCard = ({ name, imageUrl, socials }) => {
   return (
@@ -12,8 +12,10 @@ const ChefCard = ({ name, imageUrl, socials }) => {
       <div className="absolute inset-0 bg-gradient-to-t from-[#CA9C5E]/80 via-[#CA9C5E]/40 to-transparent opacity-100 group-hover:from-black/90 group-hover:via-black/50 transition-opacity duration-300" />
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col justify-end items-center text-center p-6 text-white">
-        <h3 className="text-2xl font-thin font-serif mb-3 drop-shadow-md">{name}</h3>
+      <div className="absolute inset-0 flex flex-col items-center justify-end p-6 text-center text-white">
+        <h3 className="mb-3 font-serif text-2xl font-thin drop-shadow-md">
+          {name}
+        </h3>
 
         <div className="flex justify-center space-x-4">
           {socials.facebook && (
@@ -21,7 +23,7 @@ const ChefCard = ({ name, imageUrl, socials }) => {
               href={socials.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition-colors duration-200"
+              className="text-gray-300 transition-colors duration-200 hover:text-white"
             >
               <FaFacebook className="w-6 h-6" />
             </a>
@@ -31,7 +33,7 @@ const ChefCard = ({ name, imageUrl, socials }) => {
               href={socials.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition-colors duration-200"
+              className="text-gray-300 transition-colors duration-200 hover:text-white"
             >
               <FaInstagram className="w-6 h-6" />
             </a>
@@ -41,7 +43,7 @@ const ChefCard = ({ name, imageUrl, socials }) => {
               href={socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition-colors duration-200"
+              className="text-gray-300 transition-colors duration-200 hover:text-white"
             >
               <FaLinkedin className="w-6 h-6" />
             </a>

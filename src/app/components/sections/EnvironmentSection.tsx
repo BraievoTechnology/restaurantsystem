@@ -15,22 +15,22 @@ const EnvironmentSection: React.FC<EnvironmentSectionProps> = ({ dataId }) => {
     >
       <div className="max-w-6xl mx-auto text-center">
         {/* Title */}
-        <div className="mb-8">
+        <div className="mt-[64px]">
           <SectionTitle title="Our Environment" />
         </div>
 
         {/* Description */}
-        <p className="font-['Rasa'] text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed">
+        <p className="font-['Rasa'] text-lg md:text-[22px] max-w-3xl mx-auto mb-12  mt-[-64px] leading-relaxed">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
 
         {/* Image */}
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <img
             src="/images/Envirement.png"
             alt="Our Restaurant Environment"
-            className="rounded-[40px] w-full max-w-6xl object-cover"
+            className="rounded-[40px] w-full max-w-[1200px] hover:scale-105 transition-transform duration-300  object-cover"
           />
         </div>
       </div>

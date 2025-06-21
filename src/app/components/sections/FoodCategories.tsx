@@ -9,7 +9,7 @@ const FoodCategories: React.FC<FoodCategoriesProps> = ({ dataId }) => {
   return (
     <section
       data-id={dataId}
-      className="w-full min-h-screen text-white py-16 px-4 relative overflow-hidden flex flex-col"
+      className="relative flex flex-col w-full min-h-screen px-4 py-16 overflow-hidden text-white"
     >
       {/* Title Section fixed at the top */}
       <div className="text-center mt-[128px] mb-16">
@@ -17,8 +17,8 @@ const FoodCategories: React.FC<FoodCategoriesProps> = ({ dataId }) => {
       </div>
 
       {/* Cards section centered vertically and horizontally */}
-      <div className="flex-1 flex justify-center items-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="flex items-center justify-center flex-1">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
           <Card
             image="/images/FoodCategory1.png"
             title="Breakfast Foods"
@@ -34,6 +34,12 @@ const FoodCategories: React.FC<FoodCategoriesProps> = ({ dataId }) => {
           <Card
             image="/images/FoodCategory3.png"
             title="Dinner Foods"
+            description="From crispy and golden fries to mouthwatering burgers and wraps, our menu offers"
+            buttonText="View Menus"
+          />
+          <Card
+            image="/images/FoodCategory4.png"
+            title="Desert Foods"
             description="From crispy and golden fries to mouthwatering burgers and wraps, our menu offers"
             buttonText="View Menus"
           />
