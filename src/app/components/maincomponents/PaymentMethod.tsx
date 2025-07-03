@@ -86,7 +86,7 @@ const PaymentMethod = ({
             disabled={!selectedMethod}
             className={`px-6 py-2 font-medium rounded-md transition-all ${
               selectedMethod
-                ? "bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white"
+                ? "bg-[#CA9C5E] hover:bg-[#68573A] text-white"
                 : "bg-gray-600 text-gray-400 cursor-not-allowed"
             }`}
           >

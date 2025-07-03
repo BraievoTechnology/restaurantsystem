@@ -13,7 +13,7 @@ const Confirmation = ({ orderType, orderDetails }: ConfirmationProps) => {
   return (
     <div className="bg-[#131E21] rounded-lg p-6 shadow-lg text-center">
       <div className="flex justify-center mb-6">
-        <div className="p-3 rounded-full bg-gradient-to-r from-teal-500 to-emerald-600">
+        <div className="p-3 rounded-full bg-[#CA9C5E] hover:bg-[#68573A]">
           <CheckCircleIcon className="w-12 h-12 text-white" />
         </div>
       </div>

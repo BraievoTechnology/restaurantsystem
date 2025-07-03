@@ -28,12 +28,7 @@ const Cart = () => {
         </button>
       )}
       {/* Overlay */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black bg-opacity-50"
-          onClick={toggleCart}
-        />
-      )}
+      {isOpen && <div className="fixed inset-0 z-40" onClick={toggleCart} />}
       {/* Cart Sidebar */}
       <div
         className={`fixed top-0 right-0 h-full w-full md:w-[400px] bg-[#112225] text-white transform transition-transform duration-300 ease-in-out z-50 ${

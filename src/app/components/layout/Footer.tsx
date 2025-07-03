@@ -19,6 +19,7 @@ const Footer: React.FC = () => {
         />
       </div>
 
+      {/* Decorative Leaves */}
       <div className="absolute top-0 z-10 hidden -mt-0 pointer-events-none lg:block -right-0">
         <Image
           src="/Images/pngtree.png"
@@ -85,7 +86,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Column 2: Contact Info */}
-          <div className="ml-20">
+          <div>
             <h3 className="mb-6 font-serif text-2xl text-white">
               Contact Info
             </h3>
@@ -98,7 +99,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Column 3: Quick Links */}
-          <div className="ml-20">
+          <div>
             <h3 className="mb-6 font-serif text-2xl text-white">Quick Links</h3>
             <ul className="space-y-3 text-sm">
               <li>

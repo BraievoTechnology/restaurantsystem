@@ -7,6 +7,7 @@ interface CardProps {
   title: string;
   description: string;
   buttonText: string;
+  href: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -14,6 +15,7 @@ const Card: React.FC<CardProps> = ({
   title,
   description,
   buttonText,
+  href,
 }) => {
   return (
     <div
@@ -37,13 +39,9 @@ const Card: React.FC<CardProps> = ({
 
       {/* Title & Description */}
       <div className="mt-[26px]">
-        {" "}
-        {/* 32px gap from image bottom */}
         <h3
-          className="text-white text-[24px]  mb-2"
-          style={{
-            fontFamily: "Rasa",
-          }}
+          className="text-white text-[24px] mb-2"
+          style={{ fontFamily: "Rasa" }}
         >
           {title}
         </h3>
@@ -54,7 +52,7 @@ const Card: React.FC<CardProps> = ({
 
       {/* Button */}
       <div className="flex flex-col items-center">
-        <MainButton text="VIEW MENU" ariaLabel="View Menu" />
+        <MainButton text={buttonText} href={href} ariaLabel="VIEW MENU" />
       </div>
     </div>
   );

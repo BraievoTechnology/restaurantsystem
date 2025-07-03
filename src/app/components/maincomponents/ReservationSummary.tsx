@@ -41,15 +41,15 @@ const ReservationSummary = ({
           </h3>
           <div className="space-y-3">
             <div className="flex items-center">
-              <CalendarIcon className="w-5 h-5 mr-2 text-teal-500" />
+              <CalendarIcon className="w-5 h-5 mr-2 text-[#CA9C5E]" />
               <span className="text-gray-300">Friday, December 15, 2023</span>
             </div>
             <div className="flex items-center">
-              <ClockIcon className="w-5 h-5 mr-2 text-teal-500" />
+              <ClockIcon className="w-5 h-5 mr-2 text-[#CA9C5E]" />
               <span className="text-gray-300">7:30 PM</span>
             </div>
             <div className="flex items-center">
-              <UsersIcon className="w-5 h-5 mr-2 text-teal-500" />
+              <UsersIcon className="w-5 h-5 mr-2 text-[#CA9C5E]" />
               <span className="text-gray-300">4 Guests</span>
             </div>
           </div>
@@ -61,7 +61,7 @@ const ReservationSummary = ({
             Table Details
           </h3>
           <div className="flex items-center">
-            <MapPinIcon className="w-5 h-5 mr-2 text-teal-500" />
+            <MapPinIcon className="w-5 h-5 mr-2 text-[#CA9C5E]" />
             <div>
               <p className="text-gray-300">Table A2</p>
               <p className="text-sm text-gray-400">Indoor Seating</p>
@@ -85,7 +85,7 @@ const ReservationSummary = ({
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <DollarSignIcon className="w-5 h-5 mr-2 text-teal-500" />
+                <DollarSignIcon className="w-5 h-5 mr-2 text-[#CA9C5E]" />
                 <span className="text-gray-300">Base Reservation Fee</span>
               </div>
               <span className="text-gray-300">$20.00</span>
@@ -95,8 +95,8 @@ const ReservationSummary = ({
               <span className="text-gray-300">$2.00</span>
             </div>
             <div className="flex items-center justify-between pt-3 border-t border-gray-600">
-              <span className="font-medium text-teal-400">Total Amount</span>
-              <span className="font-medium text-teal-400">$22.00</span>
+              <span className="font-medium text-[#CA9C5E]">Total Amount</span>
+              <span className="font-medium text-[#CA9C5E]">$22.00</span>
             </div>
           </div>
         </div>
@@ -111,7 +111,7 @@ const ReservationSummary = ({
           </button>
           <button
             onClick={onNextStep}
-            className="px-6 py-2 font-medium text-white transition-all rounded-md bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700"
+            className="px-6 py-2 font-medium text-white transition-all rounded-md bg-[#CA9C5E] hover:bg-[#68573A]"
           >
             Confirm Reservation
           </button>

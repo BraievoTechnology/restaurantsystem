@@ -25,7 +25,7 @@ const OrderSummary = ({
         {/* Date & Time Display */}
         <div className="p-4 bg-gray-700 rounded-lg">
           <div className="flex items-center mb-4">
-            <CalendarIcon className="w-5 h-5 mr-2 text-teal-500" />
+            <CalendarIcon className="w-5 h-5 mr-2 text-[#CA9C5E]" />
             <span className="font-medium text-gray-300">Date:</span>
             <span className="ml-2 text-white">
               {orderDetails.date
@@ -34,7 +34,7 @@ const OrderSummary = ({
             </span>
           </div>
           <div className="flex items-center">
-            <ClockIcon className="w-5 h-5 mr-2 text-teal-500" />
+            <ClockIcon className="w-5 h-5 mr-2 text-[#CA9C5E]" />
             <span className="font-medium text-gray-300">Time:</span>
             <span className="ml-2 text-white">
               {orderDetails.time || "Not selected"}
@@ -68,7 +68,7 @@ const OrderSummary = ({
           </button>
           <button
             onClick={onNextStep}
-            className="px-6 py-2 font-medium text-white transition-all rounded-md bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700"
+            className="px-6 py-2 font-medium text-white transition-all rounded-md bg-[#CA9C5E] hover:bg-[#68573A]"
           >
             Next
           </button>
