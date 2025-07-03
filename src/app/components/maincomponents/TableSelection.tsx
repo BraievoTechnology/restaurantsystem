@@ -47,7 +47,7 @@ const TableSelection = ({ onNextStep, onBackStep }: TableSelectionProps) => {
             onClick={() => setSelectedTable(table.id)}
             className={`relative p-4 rounded-lg transition-all ${
               selectedTable === table.id
-                ? "bg-teal-600 ring-2 ring-amber-500"
+                ? "bg-[#CA9C5E] ring-2 ring-white"
                 : "bg-gray-700 hover:bg-gray-600"
             }`}
             aria-selected={selectedTable === table.id}
@@ -55,9 +55,7 @@ const TableSelection = ({ onNextStep, onBackStep }: TableSelectionProps) => {
             <div className="flex flex-col items-center">
               <UsersIcon
                 className={`h-8 w-8 mb-2 ${
-                  selectedTable === table.id
-                    ? "text-amber-400"
-                    : "text-amber-500"
+                  selectedTable === table.id ? "text-white" : "text-[#CA9C5E]"
                 }`}
               />
               <span className="font-medium text-white">{table.label}</span>
@@ -112,7 +110,7 @@ const TableSelection = ({ onNextStep, onBackStep }: TableSelectionProps) => {
             px-6 py-2 font-medium rounded-md transition-all
             ${
               selectedTable
-                ? "bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white"
+                ? "bg-[#CA9C5E] hover:bg-[#68573A] text-white"
                 : "bg-gray-700 text-gray-400 cursor-not-allowed"
             }
           `}
