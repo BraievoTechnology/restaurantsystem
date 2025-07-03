@@ -6,24 +6,18 @@ import ChefSection from "./components/sections/ChefSection";
 import { StatsSection } from "./components/sections/StatsSection";
 import EnvironmentSection from "./components/sections/EnvironmentSection";
 import GallerySection from "./components/sections/GallerySection";
-import Footer from "./components/layout/Footer";
+import ParmLeaf from "./components/maincomponents/ParmLeaf";
 
 export default function Home() {
   return (
-    <div>
+    <main>
       <HeroSection />
-
       <AboutSection />
-
       <FoodCategory />
-
       <ChefSection />
-
       <StatsSection />
-
       <EnvironmentSection />
-
       <GallerySection />
-    </div>
+    </main>
   );
 }

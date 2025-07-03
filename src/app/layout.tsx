@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/layout/Header";
 import { Rasa, Poppins } from "next/font/google";
 import Footer from "./components/layout/Footer";
+import AOSWrapper from "./components/maincomponents/AOSWrapper";
 
 const rasa = Rasa({
   subsets: ["latin"],
@@ -38,8 +39,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
-      <body className="flex flex-col min-h-screen">
+    <html lang="en">
+      <body className="relative overflow-x-hidden ">
+        <AOSWrapper />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

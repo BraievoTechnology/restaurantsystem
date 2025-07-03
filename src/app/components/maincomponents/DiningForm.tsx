@@ -52,7 +52,7 @@ const DiningForm = ({ onNextStep, onBackStep }: DiningFormProps) => {
 
   const datePickerCustomStyles = {
     className:
-      "w-full bg-gray-900 border border-[#CA9C5E]/50 rounded-md px-4 py-3 pl-10 focus:outline-none focus:ring-2 focus:ring-[#CA9C5E] focus:border-transparent text-gray-300",
+      "w-full bg-gray-900 border border-[#CA9C5E] rounded-md px-4 py-3 pl-10 focus:outline-none focus:ring-2 focus:ring-[#CA9C5E] focus:border-transparent text-gray-300",
     wrapperClassName: "w-full",
     popperClassName: "react-datepicker-popper",
     calendarClassName: "bg-gray-800 border-gray-700",
@@ -80,7 +80,7 @@ const DiningForm = ({ onNextStep, onBackStep }: DiningFormProps) => {
                   fullName: e.target.value,
                 }))
               }
-              className="w-full bg-gray-900 border border-[#CA9C5E]/50 rounded-md px-4 py-3 pl-10 focus:outline-none focus:ring-2 focus:ring-[#CA9C5E] focus:border-transparent text-gray-300"
+              className="w-full bg-gray-900 border border-[#CA9C5E] rounded-md px-4 py-3 pl-10 focus:outline-none focus:ring-2 focus:ring-[#CA9C5E] focus:border-transparent text-gray-300"
               placeholder="Enter your full name"
             />
             <UserIcon className="absolute left-3 top-3.5 h-5 w-5 text-[#CA9C5E]" />
@@ -118,7 +118,7 @@ const DiningForm = ({ onNextStep, onBackStep }: DiningFormProps) => {
                 placeholderText="Select date"
                 {...datePickerCustomStyles}
               />
-              <CalendarIcon className="absolute left-3 top-3.5 h-5 w-5 text-amber-500 pointer-events-none" />
+              <CalendarIcon className="absolute left-3 top-3.5 h-5 w-5 text-[#CA9C5E] pointer-events-none" />
             </div>
           </div>
           <div className="space-y-3">
@@ -140,7 +140,7 @@ const DiningForm = ({ onNextStep, onBackStep }: DiningFormProps) => {
                 placeholderText="Select time"
                 {...datePickerCustomStyles}
               />
-              <ClockIcon className="absolute left-3 top-3.5 h-5 w-5 text-amber-500 pointer-events-none" />
+              <ClockIcon className="absolute left-3 top-3.5 h-5 w-5 text-[#CA9C5E] pointer-events-none" />
             </div>
           </div>
         </div>
@@ -161,7 +161,7 @@ const DiningForm = ({ onNextStep, onBackStep }: DiningFormProps) => {
                     phone: e.target.value,
                   }))
                 }
-                className="w-full bg-gray-900 border border-[#CA9C5E]/50 rounded-md px-4 py-3 pl-10 focus:outline-none focus:ring-2 focus:ring-[#CA9C5E] focus:border-transparent text-gray-300"
+                className="w-full bg-gray-900 border border-[#CA9C5E] rounded-md px-4 py-3 pl-10 focus:outline-none focus:ring-2 focus:ring-[#CA9C5E] focus:border-transparent text-gray-300"
                 placeholder="Enter your phone number"
                 disabled={verified}
               />
@@ -173,7 +173,7 @@ const DiningForm = ({ onNextStep, onBackStep }: DiningFormProps) => {
             {!verified && (
               <button
                 onClick={handleVerifyPhone}
-                className="px-4 py-2 font-medium text-black transition-colors rounded-md bg-amber-500 hover:bg-amber-600"
+                className="px-4 py-2 font-medium text-black transition-colors rounded-md bg-[#CA9C5E] hover:bg-[#68573A]"
                 disabled={!formData.phone}
               >
                 Verify
@@ -186,13 +186,13 @@ const DiningForm = ({ onNextStep, onBackStep }: DiningFormProps) => {
                 type="text"
                 value={otp}
                 onChange={(e) => setOTP(e.target.value)}
-                className="w-full bg-gray-900 border border-[#CA9C5E]/50 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#CA9C5E] focus:border-transparent text-gray-300"
+                className="w-full bg-gray-900 border border-[#CA9C5E] rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#CA9C5E] focus:border-transparent text-gray-300"
                 placeholder="Enter 6-digit OTP"
                 maxLength={6}
               />
               <button
                 onClick={handleVerifyOTP}
-                className="w-full px-4 py-2 mt-2 font-medium text-black transition-colors rounded-md bg-amber-500 hover:bg-amber-600"
+                className="w-full px-4 py-2 mt-2 font-medium text-black transition-colors rounded-md bg-[#CA9C5E] hover:bg-[#68573A]"
                 disabled={otp.length !== 6}
               >
                 Verify OTP
@@ -240,7 +240,7 @@ const DiningForm = ({ onNextStep, onBackStep }: DiningFormProps) => {
                 specialRequests: e.target.value,
               }))
             }
-            className="w-full bg-gray-900 border border-[#CA9C5E]/50 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#CA9C5E] focus:border-transparent text-gray-300"
+            className="w-full bg-gray-900 border border-[#CA9C5E] rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#CA9C5E] focus:border-transparent text-gray-300"
             placeholder="Any special requests or dietary requirements?"
             rows={4}
           />
@@ -264,7 +264,7 @@ const DiningForm = ({ onNextStep, onBackStep }: DiningFormProps) => {
             }
             className={`px-6 py-2 font-medium rounded-md transition-all ${
               verified && formData.fullName && formData.date && formData.time
-                ? "bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-black"
+                ? "bg-[#CA9C5E] hover:bg-[#68573A] text-black"
                 : "bg-gray-700 text-gray-400 cursor-not-allowed"
             }`}
           >

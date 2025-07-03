@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
 import { SectionTitle } from "../components/maincomponents/SectionTitle";
@@ -7,6 +6,9 @@ import ChefCard from "../components/maincomponents/ChefCard";
 import Footer from "../components/layout/Footer";
 import { FaUtensils, FaBoxOpen, FaTruck } from "react-icons/fa";
 import MainButton from "../components/maincomponents/Button";
+import ParmLeaf from "../components/maincomponents/ParmLeaf";
+import GreenPalm from "../components/maincomponents/GreenPalm";
+import FoodPlate from "../components/maincomponents/FoodPlate";
 
 interface Step {
   title: string;
@@ -71,35 +73,40 @@ const ProcessSteps: React.FC = () => (
   </div>
 );
 
-const HeroSection: React.FC = () => {
-  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    // You can add your contact logic here, e.g., open modal or navigate
-    alert("Contact button clicked!");
-  };
-
+const HeroSection = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center text-white px-4 overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center text-white px-4 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/Images/coverPage.png"
             alt="Background"
             className="object-cover w-full h-full"
           />
-          <div className="absolute inset-0 bg-black opacity-80" />
+          <div className="absolute inset-0" />
         </div>
-        <div className="relative z-10 text-center">
-          <h1 className="text-[160px] font-normal drop-shadow-lg font-sans tracking-[20px]">
-            {" "}
-            About Us
-          </h1>
+        <div data-aos="fade-down">
+          <div className="relative z-10 text-center">
+            <h1 className="text-[80px] font-normal drop-shadow-lg font-sans tracking-[20px]">
+              {" "}
+              About Us
+            </h1>
+          </div>
         </div>
       </section>
 
       {/* About Section Left Image */}
-      <section className="bg-[#0B1517] font-sans text-brand-light py-20 sm:py-28">
+      <section className="bg-[#0B1517] relative font-sans text-brand-light py-20 sm:py-28">
+        <div data-aos="fade-right">
+          <div className="relative">
+            <FoodPlate
+              position="left"
+              rotate={0}
+              className="top-[-270px] hidden md:block"
+            />
+          </div>
+        </div>
         <div className="container px-4 mx-auto">
           <SectionTitle title="A Taste Of Our Space" />
           <div className="grid items-center grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-12">
@@ -145,7 +152,7 @@ const HeroSection: React.FC = () => {
       </section>
 
       {/* About Section Right Image */}
-      <section className="bg-[#0B1517] font-sans text-brand-light py-20 sm:py-28">
+      <section className="bg-[#0B1517] font-sans text-brand-light">
         <div className="container px-4 mx-auto">
           <div className="grid items-center grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-12">
             <div className="flex justify-center px-4 mt-8 lg:justify-start lg:mt-0">
@@ -189,28 +196,36 @@ const HeroSection: React.FC = () => {
       </section>
 
       {/* Our Process Steps */}
-      <section className="bg-[#0B1517] py-20 sm:py-28">
-        <div className="container px-4 mx-auto">
-          <SectionTitle title="Our Process" />
-          <div className="flex justify-center mt-10">
+      <section className="relative py-20">
+        <div data-aos="fade-left">
+          <div className="relative">
+            <GreenPalm
+              position="right"
+              rotate={200}
+              className="top-[-180px] hidden md:block"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col justify-center px-4">
+          <SectionTitle title="Our Process " />
+          <div>
             <ProcessSteps />
           </div>
         </div>
       </section>
 
       {/* Chef Card Section */}
+
       <section className="bg-[#0B1517] font-sans text-brand-light py-20 sm:py-28">
+        <div className="relative hidden pointer-events-none lg:block ">
+          <div data-aos="fade-right">
+            <ParmLeaf position="left" rotate={160} className="top-[-350px]" />
+          </div>
+        </div>
         <div className="container px-4 mx-auto">
           {/* Side Image */}
-          <div className="hidden lg:block absolute -mt-[220px] -left-70 z-20 pointer-events-none">
-            <img
-              src="/Images/pngtree3.png"
-              alt="Chef Illustration"
-              className="w-[800px] h-auto opacity-25"
-            />
-          </div>
 
-          <SectionTitle title="Meet Our Chef" />
+          <SectionTitle title="Our Chef" />
           <div className="flex flex-wrap justify-center gap-8 mt-10">
             <ChefCard
               name="Chef Suranga"
@@ -253,7 +268,7 @@ const HeroSection: React.FC = () => {
       </section>
 
       {/* Contact Call to Action */}
-      <section className="relative bg-[#0B1517] py-80 sm:py-28">
+      <section className="relative bg-[#0B1517] mb-20 sm:py-28">
         {/* CTA Box */}
         <div className="relative z-20 w-[90vw] mx-auto text-center bg-[#0B1517] border-[4px] sm:border-[8px] md:border-[10px] border-[#B08D57] p-10 sm:p-16 md:p-20 lg:p-24 shadow-2xl">
           {/* Decorative Leaves */}
@@ -289,9 +304,9 @@ const HeroSection: React.FC = () => {
           </div>
 
           <MainButton
-            onClick={handleContactClick}
             text="CONTACT US"
             ariaLabel="Contact Us"
+            href="/contact"
           />
         </div>
       </section>
